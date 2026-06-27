@@ -5,7 +5,7 @@ const Will = require('../models/Will')
 const { sendCheckinReminder, sendWillToNominee } = require('../utils/mailer')
 const { decrypt } = require('../utils/encryption')
 
-cron.schedule('*/2 * * * *', async () => {
+cron.schedule('0 4 * * *', async () => {
   console.log('Running dead man switch check...')
 
   const users = await User.find({ isActive: true })
